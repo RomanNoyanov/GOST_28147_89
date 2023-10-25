@@ -46,12 +46,16 @@ def normal_view_bin_list(mas):
 
 
 def sum_bin(n1, key):
-    """СУММА ДВУХ БИНАРНЫХ ЧИСЕЛ (N1+N2) mod2^32"""
+    """СУММА ДВУХ БИНАРНЫХ ЧИСЕЛ (N1+Key) mod2^32"""
     strbin_n1 = bin_to_str(n1)
     strbin_n2 = bin_to_str(key)
     s = str(int(strbin_n1, 2) + int(strbin_n2, 2))
-
-    result = bin(int(s))[-32:]
+    print(bin(int(s)))
+    result = bin(int(s))
+    if len(result[2:]) < 32:
+        result = (32 - len(result[2:])) * "0" + result[2:]
+    else:
+        result = bin(int(s))[-32:]
     return result
 
 
