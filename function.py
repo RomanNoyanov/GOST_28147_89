@@ -50,7 +50,6 @@ def sum_bin(n1, key):
     strbin_n1 = bin_to_str(n1)
     strbin_n2 = bin_to_str(key)
     s = str(int(strbin_n1, 2) + int(strbin_n2, 2))
-    print(s)
 
     result = bin(int(s))[-32:]
     return result
