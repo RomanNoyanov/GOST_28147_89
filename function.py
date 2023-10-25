@@ -68,6 +68,8 @@ def sum_xor_bin(mas_n1, mas_n2):
 
     if len(result[2:]) < 32:
         result = (32 - len(result[2:])) * "0" + result[2:]
+    else:
+        result = bin(int(s))[-32:]
 
     return result
 
